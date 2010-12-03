@@ -1,5 +1,25 @@
 <p id="notice"><%= notice %></p>
+<h2>Gegevens:</h2>
+<p>
+  <b>Name:</b>
+  <%= @user.last_name %>
+  <%= @user.first_name %>
+</p>
 
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Registratie:</b>
+  <%= @user.created_at %>
+</p>
+
+<p>
+  <b>Laatste update:</b>
+  <%= @user.updated_at %>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

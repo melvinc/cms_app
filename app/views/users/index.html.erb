@@ -2,16 +2,26 @@
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Voornaam</th>
+    <th>Achternaam</th>
+    <th>Email</th>
+	<th>Registratie</th>
+	<th>Laatste update</th>
+	<th>Actie</th>
   </tr>
 
 <% @users.each do |user| %>
-  <tr>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+<tr>
+  <td><%= user.first_name %></td>
+  <td><%= user.last_name %></td>
+  <td><%= user.email%></td>
+  <td><%= user.created_at %></td>
+  <td><%= user.updated_at %></td>
+  <td>	
+		<%= link_to 'Show', user %>
+		<%= link_to 'Edit', edit_user_path(user) %>
+		<%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %>
+  </td>
   </tr>
 <% end %>
 </table>
